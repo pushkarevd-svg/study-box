@@ -49,7 +49,7 @@ body {
   text-align: center;
   background-color: #000;
   color: #fff;
-  transition: 1s;
+  transition: 2s;
 }
 .head__button:hover {
   background: #fff;
@@ -96,11 +96,142 @@ body {
   color: #fff;
 }
 
+.main__games {
+  padding-top: 72px;
+  padding-bottom: 50px;
+  min-height: 1056px;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.game-card {
+  box-shadow: 0 13px 42px -8px rgba(0, 0, 0, 0.13);
+  background: #fff;
+  border-radius: 30px;
+  max-width: 378px;
+  min-height: 473px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+.game-card:nth-child(even) {
+  min-height: 551px;
+}
+.game-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+.game-card__img {
+  width: 100%;
+  max-width: 378px;
+  height: 314px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.game-card__body {
+  padding: 22px 26px 28px;
+}
+.game-card__badge {
+  display: inline-block;
+  border-radius: 53px;
+  padding: 8px 16px 10px;
+  width: 108px;
+  height: 36px;
+  margin-bottom: 15px;
+  background-color: #f7f7f7;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 110%;
+  color: #202027;
+}
+.game-card__desc {
+  font-weight: 700;
+  font-size: 32px;
+  color: #202027;
+}
+
+.mini-games {
+  background-color: #202027;
+  padding-bottom: 144px;
+}
+.mini-games__title {
+  font-weight: 700;
+  font-size: 64px;
+  color: #fff;
+  padding-bottom: 72px;
+  padding-top: 72px;
+}
+
+.gamebar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.gamebar__card {
+  max-width: 1200px;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 20px 67px -12px rgba(0, 0, 0, 0.13);
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.gamebar__content {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+}
+.gamebar__content-name {
+  font-weight: 700;
+  font-size: 48px;
+  color: #202027;
+  margin-bottom: 24px;
+}
+.gamebar__content-desc {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 133%;
+  color: #202027;
+  margin-bottom: 36px;
+}
+.gamebar__button {
+  border-radius: 60px;
+  padding: 16px 28px;
+  width: 247px;
+  height: 66px;
+  background-color: #202027;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 142%;
+  text-align: center;
+  color: #fff;
+}
+.gamebar__pic {
+  width: 50%;
+}
+.gamebar__img {
+  border-radius: 30px;
+  width: 600px;
+  height: 500px;
+}
+
+.gamebar:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
 .footer {
   height: 150px;
   background-color: #bded35;
 }
 .footer__desc {
+  padding-top: 61px;
   font-weight: 600;
   font-size: 24px;
   text-align: center;
