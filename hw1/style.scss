@@ -5,8 +5,8 @@
 }
 
 .center {
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
 }
 
 a,
@@ -20,8 +20,10 @@ body {
 }
 
 .head {
+    position: relative;
     background-color: #e1ff8f;
     height: 800px;
+    z-index: 1;
 
     &__title {
         padding-top: 196px;
@@ -58,6 +60,39 @@ body {
         background: #fff;
         color: #000;
     }
+
+    &__main-back {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &__stars-back {
+        display: inline-block;
+    }
+
+    &__stars-back_low {
+        position: absolute;
+        right: 355px;
+    }
+
+    &__stars-back_low-mini {
+        position: absolute;
+        right: 455px;
+    }
+
+    &__stars-back_up-big {
+        position: absolute;
+        left: 63px;
+        top: 94px;
+    }
+
+    &__stars-back_up-sml {
+        position: absolute;
+        left: 156px;
+        top: 69px;
+    }
 }
 
 .marquee {
@@ -84,6 +119,7 @@ body {
 }
 
 .main {
+    position: relative;
     background: #202027;
     padding-top: 94px;
 
@@ -100,13 +136,35 @@ body {
         line-height: 133%;
         color: #fff;
     }
-}
 
+    &__back {
+        position: absolute;
+        right: 0;
+    }
 
-.main__games {
-    padding-top: 72px;
-    padding-bottom: 50px;
-    min-height: 1056px;
+    &__games {
+        position: relative;
+        padding-top: 72px;
+        padding-bottom: 50px;
+        min-height: 1056px;
+        z-index: 1;
+    }
+
+    &__center-back {
+        display: inline;
+    }
+
+    &__center-back_big {
+        position: absolute;
+        left: 40px;
+        bottom: 588px;
+    }
+
+    &__center-back_min {
+        position: absolute;
+        left: 25px;
+        top: 770px;
+    }
 }
 
 .games-grid {
@@ -125,8 +183,8 @@ body {
     transition: 0.4s ease;
     cursor: pointer;
 
-    &:nth-child(even) {
-        min-height: 551px;
+    &:nth-child(2n) {
+        grid-row: span 1.25;
     }
 
     &:hover {
@@ -167,6 +225,7 @@ body {
 }
 
 .mini-games {
+    position: relative;
     background-color: #202027;
     padding-bottom: 144px;
 
@@ -174,19 +233,45 @@ body {
         font-weight: 700;
         font-size: 64px;
         color: #fff;
-        padding-bottom: 72px;
         padding-top: 72px;
+    }
+
+    &__back {
+        display: inline-block;
+    }
+
+    &__back_up-min {
+        position: absolute;
+        right: 123px;
+    }
+
+    &__back_up-big {
+        position: absolute;
+        right: 45px;
+    }
+
+    &__back_low-big {
+        position: absolute;
+        right: 52px;
+        bottom: 65px;
+    }
+
+    &__back_low-min {
+        position: absolute;
+        right: 150px;
+        bottom: 45px;
     }
 }
 
 .gamebar {
+    padding-top: 72px;
     display: flex;
     flex-direction: column;
     gap: 40px;
 
     &__card {
         max-width: 1200px;
-        min-height: 500px;
+        height: 500px;
 
         display: flex;
         justify-content: space-between;
@@ -239,12 +324,12 @@ body {
 
     &__img {
         border-radius: 30px;
-        width: 600px;
-        height: 500px;
+        max-width: 600px;
+        min-height: 500px;
     }
 }
 
-.gamebar:nth-child(even) {
+.gamebar__card:nth-child(even) {
     flex-direction: row-reverse;
 }
 
