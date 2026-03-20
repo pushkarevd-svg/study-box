@@ -58,6 +58,10 @@ body {
   background: #fff;
   color: #000;
 }
+.head__button::after {
+  background: #fff;
+  color: #000;
+}
 .head__main-back {
   display: inline-block;
   position: absolute;
