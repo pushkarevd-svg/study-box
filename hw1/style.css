@@ -242,9 +242,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .head__stars-back {
-    display: none;
-  }
   .head__title {
     font-size: 40px;
   }
