@@ -21,7 +21,7 @@ body {
 }
 
 .head {
-    height: 710px;
+    min-height: 700px;
     background:
         url(images/head-back.png) right top no-repeat,
         url(images/Star\ 1.png) 156px 69px no-repeat,
@@ -79,20 +79,20 @@ body {
     background: #bcec30;
     padding: 25px 50px;
     white-space: nowrap;
-}
 
-.marquee__content span {
-    margin-right: 40px;
-    font-weight: bold;
-    font-size: 18px;
-    color: #000;
-    align-content: center;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 110%;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #202027;
+    &__content span {
+        margin-right: 40px;
+        font-weight: bold;
+        font-size: 18px;
+        color: #000;
+        align-content: center;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 110%;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #202027;
+    }
 }
 
 .main {
@@ -199,12 +199,11 @@ body {
 
     &__card {
         max-width: 1200px;
-        height: 500px;
+        min-height: 500px;
 
         display: flex;
         justify-content: space-between;
 
-        box-shadow: 0 20px 67px -12px rgba(0, 0, 0, 0.13);
         background: #fff;
         border-radius: 30px;
         overflow: hidden;
@@ -214,6 +213,7 @@ body {
         padding: 48px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
     }
 
     &__content-name {

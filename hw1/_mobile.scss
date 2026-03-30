@@ -1,11 +1,131 @@
 @media (max-width: 768px) {
+    .desktop-br {
+        display: none;
+    }
+
     .head {
+        background: none;
+        background:
+            url(images/mobile-big-star.png) right top no-repeat,
+            url(images/mobileStar\ 1.png) 91px 64px no-repeat,
+            url(images/mobileStar\ 2.png) 37px 97px no-repeat,
+            url(images/mobileStar\ 3.png) calc(100% - 86px) calc(100% - 74px) no-repeat,
+            url(images/mobileStar\ 4.png) calc(100% - 34px) calc(100% - 28px) no-repeat,
+            #E1FF8F;
 
         &__title {
+            text-align: center;
             font-size: 40px;
         }
 
         &__desc {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        &__link {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__button {
+            width: 285px;
+            height: 55px;
+            font-size: 16px;
+        }
+    }
+
+    .marquee {
+        height: 51px;
+        padding: 16px 24px;
+
+        &__content span {
+            font-size: 16px;
+        }
+
+        &__content {
+            display: flex;
+            align-items: center;
+        }
+
+        &__star {
+            scale: 0.555;
+        }
+    }
+
+    .main {
+        display: none;
+    }
+
+    .mini-games {
+        background: none;
+        background-color: #202027;
+        padding-bottom: 10px;
+
+        &__title {
+            padding-top: 48px;
+            padding-left: 16px;
+            font-size: 40px;
+        }
+    }
+
+    .gamebar {
+        align-items: center;
+        padding-top: 48px;
+        gap: 10px;
+
+        &__card {
+            flex-direction: column;
+            max-width: 343px;
+            min-height: 528px;
+        }
+
+        &__content {
+            order: 2;
+            padding: 29px;
+        }
+
+        &__content-name {
+            margin-bottom: 16px;
+            font-size: 32px;
+        }
+
+        &__content-desc {
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+
+        &__button {
+            border-radius: 60px;
+            padding: 16px 28px;
+            max-width: 285px;
+            height: 55px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        &__pic {
+            order: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__img {
+            object-fit: cover;
+            max-width: 343px;
+            min-height: 284px;
+        }
+    }
+
+    .gamebar__card:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .footer {
+        height: 100px;
+
+        &__desc {
+            padding-top: 40px;
             font-size: 16px;
         }
     }
