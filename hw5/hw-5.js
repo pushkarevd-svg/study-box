@@ -50,17 +50,17 @@ function age() {
 // Задание 5
 
 function mult(a, b) {
-    if (isNaN(num1) || isNaN(num2)) {
+    if (isNaN(a) || isNaN(b)) {
         return `Одно или оба значения не являются числом`;
     } else {
-        return num1 * num2;
+        return a * b;
     }
 }
 
 // Задание 6
 
 function getNumber() {
-    let n = prompt('Введите число')
+    let n = +prompt('Введите число')
     if (isNaN(n)) {
         return 'Переданный параметр не является числом';
     } else {
