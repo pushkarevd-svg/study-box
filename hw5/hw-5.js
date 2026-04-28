@@ -60,7 +60,8 @@ function mult(a, b) {
 // Задание 6
 
 function getNumber() {
-    let n = +prompt('Введите число')
+    let input = prompt('Введите число')
+    let n = Number(input);
     if (isNaN(n)) {
         return 'Переданный параметр не является числом';
     } else {
