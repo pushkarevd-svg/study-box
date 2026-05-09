@@ -1,4 +1,5 @@
 // Игра 1
+
 function guessNumber() {
     let input = prompt('Я загадал случайное число от 1 до 100, попробуй угадать');
 
@@ -104,7 +105,7 @@ function doArithmeticTasks() {
             alert('Неверно')
         }
 
-        playAgain = confirm('Продолжить?')
+        playAgain = confirm('Продолжим?')
 
     }
     alert('Игра окончена')
