@@ -109,3 +109,13 @@ function doArithmeticTasks() {
     }
     alert('Игра окончена')
 }
+
+// Игра 3
+
+function turnOverText() {
+    let input = prompt('Введите текст, который нужно перевернуть')
+
+    if (input === null) return;
+
+    alert([...input].reverse().join(''))
+}
