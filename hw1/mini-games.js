@@ -119,3 +119,6 @@ function turnOverText() {
 
     alert([...input].reverse().join(''))
 }
+
+// Игра 5
+
