@@ -249,6 +249,7 @@ body {
     background: url(images/mobile-big-star.png) right top no-repeat, url(images/mobileStar\ 1.png) 91px 64px no-repeat, url(images/mobileStar\ 2.png) 37px 97px no-repeat, url(images/mobileStar\ 3.png) calc(100% - 86px) calc(100% - 74px) no-repeat, url(images/mobileStar\ 4.png) calc(100% - 34px) calc(100% - 28px) no-repeat, #E1FF8F;
   }
   .head__title {
+    padding-top: 147px;
     text-align: center;
     font-size: 40px;
   }
