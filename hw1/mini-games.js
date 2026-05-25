@@ -119,3 +119,82 @@ function turnOverText() {
 
     alert([...input].reverse().join(''))
 }
+
+// Игра 5
+
+const quiz = [
+    {
+        question: "Какой цвет небо?",
+        options: ["1. Красный", "2. Синий", "3. Зеленый"],
+        correctAnswer: 2
+    },
+    {
+        question: "Сколько дней в неделе?",
+        options: ["1. Шесть", "2. Семь", "3. Восемь"],
+        correctAnswer: 2
+    },
+    {
+        question: "Сколько у человека пальцев на одной руке?",
+        options: ["1. Четыре", "2. Пять", "3. Шесть"],
+        correctAnswer: 2
+    }
+];
+
+function takeQuiz() {
+    let input = confirm('Простая викторина\nОтвечать нужно номером ответа')
+
+    if (!input) {
+        alert('Игра окончена')
+        return
+    }
+
+    let correctAnswers = 0;
+    let mistakes = []
+
+    for (let task of quiz) {
+        let answer;
+
+        while (true) {
+            let userInput = prompt(`${task.question}\n${task.options.join('\n')}`)
+
+            if (userInput === null) {
+                alert('Вводить нужно цифру')
+                return
+            }
+
+            answer = Number(userInput);
+
+            if (!Number.isNaN(answer) && answer >= 1 && answer <= quiz.length) {
+                break
+            }
+
+            alert('Нужно ввести корректную цифру')
+        }
+
+        if (task.correctAnswer === answer) {
+            correctAnswers++
+        } else {
+            mistakes.push(task.question)
+        }
+
+    }
+
+    let uncorrectAnswers = quiz.length - correctAnswers;
+
+    if (correctAnswers === quiz.length) {
+        alert(`Все ответы верны`)
+    } else if (correctAnswers >= 4) {
+        alert(`Хороший результат: ${correctAnswers}, кол-во ошибок: ${uncorrectAnswers}`)
+    } else {
+        alert(`Правильных ответов: ${correctAnswers}, ошибок: ${uncorrectAnswers}`)
+    }
+
+    if (mistakes.length > 0) {
+        if (confirm('Хочешь узнать где были ошибки?')) {
+            alert(`Ошибки были в вопросах:\n${mistakes.join('\n')}`)
+        } else {
+            alert('Игра окончена')
+            return
+        }
+    }
+}
