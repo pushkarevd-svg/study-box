@@ -120,6 +120,69 @@ function turnOverText() {
     alert([...input].reverse().join(''))
 }
 
+// Игра 4
+
+const rules = [
+    ["камень", "ножницы"],
+    ["ножницы", "бумага"],
+    ["бумага", "камень"]
+];
+
+const gameItems = ["камень", "ножницы", "бумага"]
+
+function rockPaperScissors() {
+    let playAgain = true;
+    let computerScore = 0;
+    let playerScore = 0;
+
+    while (playAgain) {
+        let input = prompt('Напиши цифру или введи:\n Камень, ножницы или бумага')
+
+        if (input === null) {
+            alert('Игра окончена')
+            return
+        }
+
+        input = input.toLowerCase().trim();
+
+        let computerChoice = getRandom(gameItems);
+
+        switch (input) {
+            case "1":
+            case "камень":
+                input = gameItems[0];
+                break;
+            case "2":
+            case "ножницы":
+                input = gameItems[1];
+                break;
+            case "3":
+            case "бумага":
+                input = gameItems[2];
+                break;
+            default:
+                alert('Некорректный ввод');
+                continue;
+        }
+
+        let playerWin = rules.some(rule =>
+            rule[0] === input && rule[1] === computerChoice
+        );
+
+        if (playerWin) {
+            playerScore++
+            playAgain = confirm(`Твоя победа, сыграем ещё раз?\nТвой счёт: ${playerScore}, мой счёт: ${computerScore}`);
+        } else if (computerChoice === input) {
+            playAgain = confirm(`Ничья, сыграем ещё раз?\nТвой счёт: ${playerScore}, мой счёт: ${computerScore}`)
+        } else {
+            computerScore++
+            playAgain = confirm(`Моя взяла, сыграем ещё раз?\nТвой счёт: ${playerScore}, мой счёт: ${computerScore}`)
+        }
+    }
+
+    alert('Игра окончена')
+}
+
 // Игра 5
 
 const quiz = [
