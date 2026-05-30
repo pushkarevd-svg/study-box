@@ -261,3 +261,62 @@ function takeQuiz() {
         }
     }
 }
+
+// 6 игра
+
+let randomColorGeneratorGame = document.querySelector('.button-randomColorGenerator');
+let containers = document.querySelectorAll('[data-action="color-change"]');
+
+let rgb1 = 0;
+let rgb2 = 0;
+let rgb3 = 0;
+
+let message = '. Взгляни, как изменился фон сайта'
+
+function randomRgb(rgb) {
+    return Math.floor(Math.random() * (255 - 0 + 1) + 0)
+}
+
+function getRandomColor() {
+    rgb1 = randomRgb(rgb1)
+    rgb2 = randomRgb(rgb2)
+    rgb3 = randomRgb(rgb3)
+
+    let result = `Твой цвет: rgb(${rgb1}, ${rgb2}, ${rgb3}) ♡`;
+
+    return {
+        text: result,
+        rgb: `rgb(${rgb1}, ${rgb2}, ${rgb3})`
+    }
+}
+
+function randomColorGenerator() {
+    let input = confirm('Изменить цвет фона? ')
+
+    let result = getRandomColor()
+
+    if (!input) {
+        alert('Тогда закончим')
+        return
+    }
+
+    alert(result.text + message);
+    containers.forEach((el) => el.style.backgroundColor = result.rgb)
+}
+
+randomColorGeneratorGame.addEventListener('click', () => randomColorGenerator());
+
+const mediaQuery = window.matchMedia('(max-width: 767px)');
+
+function handleScreenChange(e) {
+    const link = document.querySelector('.header__link-anchor');
+
+    if (e.matches) {
+        link.href = '#guessAnumber'
+    } else {
+        link.href = '#about'
+    }
+}
+
+mediaQuery.addEventListener('change', () => handleScreenChange)
+handleScreenChange(mediaQuery)
