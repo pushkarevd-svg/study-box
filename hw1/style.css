@@ -18,6 +18,7 @@ button {
 
 body {
   font-family: Montserrat, sans-serif;
+  overflow-x: hidden;
 }
 
 .head {
@@ -66,15 +67,20 @@ body {
   min-height: 90px;
   overflow: hidden;
   background: #bcec30;
-  padding: 25px 50px;
+  padding: 25px 0;
   white-space: nowrap;
 }
+.marquee__content {
+  display: inline-flex;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  animation: marquee-right 20s linear infinite;
+}
 .marquee__content span {
+  display: flex;
+  align-items: center;
   margin-right: 40px;
-  font-weight: bold;
-  font-size: 18px;
-  color: #000;
-  align-content: center;
   font-weight: 700;
   font-size: 30px;
   line-height: 110%;
@@ -83,6 +89,14 @@ body {
   color: #202027;
 }
 
+@keyframes marquee-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-500px);
+  }
+}
 .main {
   padding-top: 94px;
   background: url(images/bigStar\ 1.png) right 77px no-repeat, url(images/Star\ 5.png) 25px 770px no-repeat, url(images/Star\ 6.png) 40px 60% no-repeat, #202027;
@@ -146,8 +160,7 @@ body {
   font-size: 32px;
   color: #202027;
 }
-
-.game-card__end {
+.game-card-end {
   align-self: end;
 }
 

@@ -18,6 +18,7 @@ button {
 
 body {
     font-family: Montserrat, sans-serif;
+    overflow-x: hidden;
 }
 
 .head {
@@ -77,21 +78,37 @@ body {
     min-height: 90px;
     overflow: hidden;
     background: #bcec30;
-    padding: 25px 50px;
+    padding: 25px 0;
     white-space: nowrap;
 
+    &__content {
+        display: inline-flex;
+        align-items: center;
+        width: max-content;
+        animation: marquee-right 20s linear infinite;
+    }
+
     &__content span {
+        display: flex;
+        align-items: center;
         margin-right: 40px;
-        font-weight: bold;
-        font-size: 18px;
-        color: #000;
-        align-content: center;
+
         font-weight: 700;
         font-size: 30px;
         line-height: 110%;
         letter-spacing: 0.04em;
         text-transform: uppercase;
         color: #202027;
+    }
+}
+
+@keyframes marquee-right {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-500px);
     }
 }
 
@@ -168,10 +185,10 @@ body {
         font-size: 32px;
         color: #202027;
     }
-}
 
-.game-card-end {
-    align-self: end;
+    &-end {
+        align-self: end;
+    }
 }
 
 .mini-games {
