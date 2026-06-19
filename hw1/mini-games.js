@@ -282,7 +282,7 @@ function getRandomColor() {
     rgb2 = randomRgb(rgb2)
     rgb3 = randomRgb(rgb3)
 
-    let result = `Твой цвет: rgb(${rgb1}, ${rgb2}, ${rgb3}) ♡`;
+    let result = `Твой цвет: rgb(${rgb1}, ${rgb2}, ${rgb3}) `;
 
     return {
         text: result,
@@ -291,7 +291,7 @@ function getRandomColor() {
 }
 
 function randomColorGenerator() {
-    let input = confirm('Изменить цвет фона? ')
+    let input = confirm('Сгенерируем случайный цвет? ')
 
     let result = getRandomColor()
 
@@ -305,18 +305,3 @@ function randomColorGenerator() {
 }
 
 randomColorGeneratorGame.addEventListener('click', () => randomColorGenerator());
-
-const mediaQuery = window.matchMedia('(max-width: 767px)');
-
-function handleScreenChange(e) {
-    const link = document.querySelector('.header__link-anchor');
-
-    if (e.matches) {
-        link.href = '#guessAnumber'
-    } else {
-        link.href = '#about'
-    }
-}
-
-mediaQuery.addEventListener('change', () => handleScreenChange)
-handleScreenChange(mediaQuery)

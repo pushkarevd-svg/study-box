@@ -232,7 +232,9 @@ body {
   width: 50%;
 }
 .gamebar__img {
-  border-radius: 30px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
   max-width: 600px;
   min-height: 500px;
 }
