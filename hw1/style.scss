@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+a,
+input,
+button {
+    text-decoration: none;
+    font-family: inherit;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    overflow-x: hidden;
+}
+
+.head {
+    min-height: 700px;
+    background:
+        url(images/head-back.png) right top no-repeat,
+        url(images/Star\ 1.png) 156px 69px no-repeat,
+        url(images/Star\ 2.png) 63px 94px no-repeat,
+        url(images/Star\ 3.png) calc(100% - 455px) calc(100% - 135px) no-repeat,
+        url(images/Star\ 4.png) calc(100% - 344px) calc(100% - 59px) no-repeat,
+        #E1FF8F;
+
+    &__title {
+        padding-top: 196px;
+        font-weight: 700;
+        font-size: 64px;
+        color: #202027;
+    }
+
+    &__desc {
+        padding-top: 24px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 133%;
+        color: #202027;
+    }
+
+    &__button {
+        margin-top: 48px;
+        border: 1px solid #202027;
+        border-radius: 60px;
+        padding: 16px 28px;
+        width: 247px;
+        height: 66px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 142%;
+        text-align: center;
+        background-color: #000;
+        color: #fff;
+        transition: 2s;
+    }
+
+    &__button:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    &__button::after {
+        background: #fff;
+        color: #000;
+    }
+}
+
+.marquee {
+    width: 100%;
+    min-height: 90px;
+    overflow: hidden;
+    background: #bcec30;
+    padding: 25px 0;
+    white-space: nowrap;
+
+    &__content {
+        display: inline-flex;
+        align-items: center;
+        width: max-content;
+        animation: marquee-right 20s linear infinite;
+    }
+
+    &__content span {
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 110%;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #202027;
+    }
+}
+
+@keyframes marquee-right {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-500px);
+    }
+}
+
+.main {
+    padding-top: 94px;
+    background:
+        url(images/bigStar\ 1.png) right 77px no-repeat,
+        url(images/Star\ 5.png) 25px 770px no-repeat,
+        url(images/Star\ 6.png) 40px 60% no-repeat,
+        #202027;
+
+    &__title {
+        font-weight: 700;
+        font-size: 64px;
+        color: #fff;
+    }
+
+    &__desc {
+        padding-top: 24px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 133%;
+        color: #fff;
+    }
+
+    &__games {
+        padding-top: 72px;
+        padding-bottom: 50px;
+        min-height: 1056px;
+    }
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 32px;
+    align-items: start;
+}
+
+.game-card {
+    background: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 0.4s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__body {
+        padding: 22px 26px 28px;
+    }
+
+    &__badge {
+        display: inline-block;
+        border-radius: 53px;
+        padding: 8px 16px 10px;
+        margin-bottom: 15px;
+        background-color: #f7f7f7;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 110%;
+        color: #202027;
+    }
+
+    &__desc {
+        max-width: 306px;
+        font-weight: 700;
+        font-size: 32px;
+        color: #202027;
+    }
+
+    &-end {
+        align-self: end;
+    }
+}
+
+.mini-games {
+    padding-bottom: 144px;
+    background:
+        url(images/Star\ 7.png) calc(100% - 123px) 93px no-repeat,
+        url(images/Star\ 8.png) calc(100% - 45px) 126px no-repeat,
+        url(images/Star\ 9.png) calc(100% - 52px) calc(100% - 65px) no-repeat,
+        url(images/Star\ 10.png) calc(100% - 150px) calc(100% - 45px) no-repeat,
+        #202027;
+
+    &__title {
+        font-weight: 700;
+        font-size: 64px;
+        color: #fff;
+        padding-top: 72px;
+    }
+}
+
+.gamebar {
+    padding-top: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__card {
+        max-width: 1200px;
+        min-height: 500px;
+
+        display: flex;
+        justify-content: space-between;
+
+        background: #fff;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    &__content {
+        padding: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__content-name {
+        font-weight: 700;
+        font-size: 48px;
+        color: #202027;
+        margin-bottom: 24px;
+    }
+
+    &__content-desc {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 133%;
+        color: #202027;
+        margin-bottom: 36px;
+    }
+
+    &__button {
+        border-radius: 60px;
+        padding: 16px 28px;
+        width: 247px;
+        height: 66px;
+        background-color: #202027;
+        color: white;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 142%;
+        text-align: center;
+        color: #fff;
+    }
+
+    &__button:hover {
+        background: #fff;
+        color: #000;
+        transition: 1s;
+    }
+
+    &__pic {
+        width: 50%;
+    }
+
+    &__img {
+        display: block;
+        object-fit: cover;
+        max-width: 600px;
+        min-height: 500px;
+    }
+}
+
+.gamebar__card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.footer {
+    height: 150px;
+    background-color: #bded35;
+
+    &__desc {
+        padding-top: 61px;
+        font-weight: 600;
+        font-size: 24px;
+        text-align: center;
+        color: #000;
+    }
+}
+
+@import "mobile";
